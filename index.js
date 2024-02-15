@@ -39,6 +39,14 @@ const run = async () => {
       res.send({ status: false });
     });
 
+    app.get("/users", async (req, res) => {
+
+      const result = await userCollection.find().toArray()
+      
+
+      res.send(result);
+    });
+
     app.patch("/apply", async (req, res) => {
       const userId = req.body.userId;
       const jobId = req.body.jobId;
