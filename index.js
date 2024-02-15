@@ -41,7 +41,7 @@ const run = async () => {
 
     app.get("/users", async (req, res) => {
 
-      const result = await userCollection.find().toArray()
+      const result = await userCollection.find({}).toArray()
       
 
       res.send(result);
